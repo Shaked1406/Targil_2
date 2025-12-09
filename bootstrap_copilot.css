@@ -1,0 +1,82 @@
+/* Custom styles for Part B Section Three - Bootstrap layout */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+}
+
+.main-container {
+    padding: 15px;
+    outline: 3px solid red;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* thick red top border via pseudo-element */
+.main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: red;
+}
+
+.main-container {
+    padding-top: 25px;
+}
+
+/* Box styling */
+.box {
+    border: 3px solid red;
+    background: #fff;
+    display: block;
+    width: 100%;
+}
+
+/* Top row small boxes - make them roughly square */
+.small-box {
+    padding-top: 80%;
+}
+
+/* Middle row thin boxes - short height relative to width */
+.thin-box {
+    padding-top: 18%;
+}
+
+/* Middle row large right box - height = sum of two thin boxes + gap */
+.large-right-box {
+    padding-top: 44%;
+}
+
+/* Bottom row left box */
+.bottom-left-box {
+    padding-top: 35%;
+}
+
+/* Bottom row right box */
+.bottom-right-box {
+    padding-top: 35%;
+}
+
+/* Left tall box */
+.left-box {
+    padding-top: 450%;
+}
+
+/* Media query for <= 750px: stack vertically */
+@media (max-width: 750px) {
+    .small-box,
+    .thin-box,
+    .large-right-box,
+    .bottom-left-box,
+    .bottom-right-box,
+    .left-box {
+        padding-top: 40%;
+    }
+}

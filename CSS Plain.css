@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 5px;
+}
+
+[class*="col-"] {
+    float: left;
+    border: 3px solid red;
+}
+
+body, html {height: 100%;}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.leftSide {
+    height: 100%;
+}
+
+.rightSide {
+    height: 100%;
+}
+
+.topSide {
+    height: 100%;
+}
+
+.smallCol {
+    height: 25%;
+    width: 24%;
+    margin: 0.5%;
+}
+
+.biglColNoColor {
+    height: 40%;
+    border: 0px;
+    width: 50%;
+}
+
+.halfCol {
+    height: 50%;
+    margin: 0.5%;
+}
+
+.biglCol {
+    height: 40%;
+    width: 49%;
+    margin: 0.5%;
+}
+
+.LeftBottomBigCol {
+    height: 30%;
+    width: 64%;
+    margin: 0.5%;
+}
+
+.RightBottomBigCol {
+    height: 30%;
+    width: 34%;
+    margin: 0.5%;
+}
+
+/* --- הוסיפי את החלק הזה ב-CSS הרגיל (למעלה) --- */
+.main-wrapper {
+    /* Non-intrusive outer frame: use outline so inner widths/heights don't change */
+    position: relative;
+    outline: 3px solid red; /* visual frame without changing box size */
+    padding: 0; /* KEEP inner layout unchanged */
+    overflow: hidden; /* clear floats inside */
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+/* --- ה-Media Query המתוקן --- */
+@media screen and (max-width: 750px) {
+
+    /* 1. איפוס והגדרת רוחב מלא לכולם */
+    [class*="col-"] {
+        width: 100% !important;
+        float: none;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    /* 2. הגדרת גובה למלבנים */
+    .col-2.leftSide,
+    .smallCol,
+    .biglCol,
+    .LeftBottomBigCol,
+    .RightBottomBigCol,
+    .halfCol {
+        height: 50px; 
+        width: 100% !important;
+
+    .rightSide {
+        border: none !important; /* מבטל את המסגרת הפנימית כדי לא ליצור כפילות */
+        padding: 0;
+        margin: 0;
+        height: auto;
+    }
+
+    /* טיפול בקונטיינר הפנימי השקוף */
+    .biglColNoColor {
+        border: none;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        width: 100% !important;
+    }
+
+    /* התאמת המעטפת למסך קטן */
+    .main-wrapper {
+        height: auto;
+        padding: 5px;
+    }
+
+    body, html {
+        height: auto;
+    }
+}
