@@ -82,46 +82,48 @@ body, html {height: 100%;}
     margin: 10px;
 }
 
+
 @media screen and (max-width: 750px) {
 
-    /* כל ה"עמודות" של הגריד הופכות לשורה מלאה אחת מתחת לשנייה */
+    /* 1. איפוס והגדרת רוחב מלא לכולם */
     [class*="col-"] {
+        width: 100% !important;
         float: none;
-        width: 100%;
-        margin: 0 0 10px 0;  /* רווח קטן בין המלבנים */
+        margin: 0;
+        margin-bottom: 10px; /* רווח בין המלבנים */
     }
 
-    /* כמו left-panel / right-wrapper בדוגמה – שני הפאנלים אחד מעל השני */
-    .leftSide,
-    .rightSide,
-    .topSide {
-        float: none;
-        width: 100%;
-        height: auto;
-        margin: 0 0 10px 0;
-    }
-
-    /* כל המלבנים הפנימיים הופכים לרוחב מלא, אחד מתחת לשני */
+    /* 2. הגדרת גובה למלבנים כדי שיראו "עבים" */
+    .col-2.leftSide,
     .smallCol,
     .biglCol,
-    .biglColNoColor,
     .LeftBottomBigCol,
     .RightBottomBigCol,
     .halfCol {
-        float: none;
-        width: 100%;
-        margin: 0 0 10px 0;
-        height: 100px;  /* כמו .box / .wide / .narrow בדוגמה */
+        height: 50px; /* את יכולה לשנות את המספר הזה אם את רוצה אותם גבוהים יותר */
+        width: 100% !important;
     }
 
-    /* הקונטיינר החיצוני מתכוונן לגובה התוכן */
-    .main-wrapper {
+    /* 3. התיקון החשוב: ביטול המסגרת והרווחים של הקונטיינר הגדול */
+    /* זה יגרום למלבנים שבתוכו להיראות כאילו הם עצמאיים */
+    .rightSide {
+        border: none !important; /* מבטל את המסגרת האדומה הגדולה */
+        padding: 0;
+        margin: 0;
         height: auto;
-        padding: 5px;
-        overflow: hidden; /* שימור ניקוי float אם נשאר משהו */
     }
 
-    body, h
+    /* 4. טיפול בקונטיינר הפנימי השקוף */
+    .biglColNoColor {
+        border: none;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        width: 100% !important;
+    }
 
-
+    /* מאפשר גלילה */
+    body, html {
+        height: auto;
+    }
 }
