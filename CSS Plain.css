@@ -82,50 +82,46 @@ body, html {height: 100%;}
     margin: 10px;
 }
 
-/* --- ה-Media Query המתוקן --- */
 @media screen and (max-width: 750px) {
 
-    /* 1. איפוס והגדרת רוחב מלא לכולם */
+    /* כל ה"עמודות" של הגריד הופכות לשורה מלאה אחת מתחת לשנייה */
     [class*="col-"] {
-        width: 100% !important;
         float: none;
-        margin: 0;
-        margin-bottom: 10px;
+        width: 100%;
+        margin: 0 0 10px 0;  /* רווח קטן בין המלבנים */
     }
 
-    /* 2. הגדרת גובה למלבנים */
-    .col-2.leftSide,
+    /* כמו left-panel / right-wrapper בדוגמה – שני הפאנלים אחד מעל השני */
+    .leftSide,
+    .rightSide,
+    .topSide {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+
+    /* כל המלבנים הפנימיים הופכים לרוחב מלא, אחד מתחת לשני */
     .smallCol,
     .biglCol,
+    .biglColNoColor,
     .LeftBottomBigCol,
     .RightBottomBigCol,
     .halfCol {
-        height: 50px; 
-        width: 100% !important;
-
-    .rightSide {
-        border: none !important; /* מבטל את המסגרת הפנימית כדי לא ליצור כפילות */
-        padding: 0;
-        margin: 0;
-        height: auto;
+        float: none;
+        width: 100%;
+        margin: 0 0 10px 0;
+        height: 100px;  /* כמו .box / .wide / .narrow בדוגמה */
     }
 
-    /* טיפול בקונטיינר הפנימי השקוף */
-    .biglColNoColor {
-        border: none;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        width: 100% !important;
-    }
-
-    /* התאמת המעטפת למסך קטן */
+    /* הקונטיינר החיצוני מתכוונן לגובה התוכן */
     .main-wrapper {
         height: auto;
         padding: 5px;
+        overflow: hidden; /* שימור ניקוי float אם נשאר משהו */
     }
 
-    body, html {
-        height: auto;
-    }
+    body, h
+
+
 }
