@@ -1,0 +1,151 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background: #fff;
+}
+
+.layout {
+	display: table;
+	width: 96%;
+	margin: 20px auto;
+	border: 3px solid #e60000;
+	padding: 14px;
+	overflow: hidden;
+	min-height: 640px;
+	border-collapse: separate;
+	border-spacing: 12px 0; /* horizontal gap between sidebar and main */
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.box {
+	border: 3px solid #e60000;
+	background: #fff;
+}
+
+.sidebar {
+	display: table-cell;
+	width: 20%;
+	height: 612px;
+	vertical-align: top;
+}
+
+.main {
+	display: table-cell;
+	width: 78%;
+	vertical-align: top;
+	min-height: 612px; /* match sidebar height */
+}
+
+.row {
+	width: 100%;
+	margin-bottom: 2%;
+}
+
+.row-top .top-box {
+	float: left;
+	width: 23%;
+	margin-right: 2%;
+	height: 140px;
+}
+
+.row-top .top-box:last-child {
+	margin-right: 0;
+}
+
+.row-middle .stacked-group {
+	float: left;
+	width: 46%;
+	margin-right: 2%;
+}
+
+.row-middle .stacked-group .stacked-box {
+	width: 100%;
+	height: 90px;
+	margin-bottom: 6%;
+}
+
+.row-middle .stacked-group .stacked-box:last-child {
+	margin-bottom: 0;
+}
+
+.row-middle .wide-box {
+	float: left;
+	width: 52%;
+	height: 200px;
+}
+
+.row-bottom .bottom-box {
+	float: left;
+	width: 48%;
+	height: 170px;
+	margin-right: 4%;
+}
+
+.row-bottom .bottom-box:last-child {
+	margin-right: 0;
+}
+
+/* Responsive: stack everything under 750px */
+@media (max-width: 750px) {
+	.layout {
+		display: block;
+		padding: 10px;
+		min-height: 0;
+		border: none;
+		border-spacing: 0;
+	}
+
+	.sidebar,
+	.main,
+	.row,
+	.row-top .top-box,
+	.row-middle .stacked-group,
+	.row-middle .wide-box,
+	.row-middle .stacked-group .stacked-box,
+	.row-bottom .bottom-box {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		display: block;
+	}
+
+	.sidebar {
+		height: 160px;
+		margin-bottom: 12px;
+	}
+
+	.main {
+		min-height: 0;
+	}
+
+	.row {
+		margin-bottom: 12px;
+	}
+
+	.row-top .top-box,
+	.row-middle .wide-box,
+	.row-bottom .bottom-box {
+		margin-bottom: 12px;
+	}
+
+	.row-middle .stacked-group .stacked-box {
+		margin-bottom: 12px;
+		height: 120px;
+	}
+
+	.row-bottom .bottom-box:last-child,
+	.row-top .top-box:last-child,
+	.row-middle .stacked-group .stacked-box:last-child {
+		margin-bottom: 0;
+	}
+}
