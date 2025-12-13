@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 5px;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+[class*="col-"] {
+    border: 3px solid red;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.leftSide {
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.rightSide {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-grow: 1;
+}
+
+.smallCol {
+    height: 25%;
+    width: calc(25% - 1%);
+    margin: 0.5%;
+    flex-shrink: 0;
+}
+
+.biglColNoColor {
+    height: 40%;
+    border: 0px;
+    width: calc(50% - 1%);
+    margin: 0.5%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.halfCol {
+    height: 50%;
+    width: calc(100% - 1%);
+    margin: 0.5%;
+}
+
+.biglCol {
+    height: 40%;
+    width: calc(50% - 1%);
+    margin: 0.5%;
+    flex-shrink: 0;
+}
+
+.LeftBottomBigCol {
+    height: 30%;
+    width: calc(65% - 1%);
+    margin: 0.5%;
+    flex-shrink: 0;
+}
+
+.RightBottomBigCol {
+    height: 30%;
+    width: calc(35% - 1%);
+    margin: 0.5%;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        flex-direction: column;
+    }
+
+    [class*="col-"] {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .col-2.leftSide,
+    .smallCol,
+    .biglCol,
+    .LeftBottomBigCol,
+    .RightBottomBigCol,
+    .halfCol {
+        height: 50px;
+        width: 100%;
+    }
+
+    .rightSide {
+        border: none;
+        padding: 0;
+    }
+
+    .biglColNoColor {
+        padding: 0;
+    }
+
+    body, html {
+        height: auto;
+    }
+}
