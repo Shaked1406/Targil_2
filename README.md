@@ -1,8 +1,8 @@
 # HW2 - HTML & CSS Project
 
-#Project Description:
+# Project Description:
 This project was created as part of a Web Programming course.
-The website was built using a single HTML file and several CSS files, where each file represents a different design method.
+The website was built using several HTML files and several CSS files, where each file represents a different design method.
 
-#Link to the live site:
+# Link to the live site:
 https://shaked1406.github.io/Targil_2/
